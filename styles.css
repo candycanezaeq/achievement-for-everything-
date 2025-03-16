@@ -1,0 +1,148 @@
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: #1a1a1a;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #ffcc00;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#stats {
+  margin-bottom: 20px;
+}
+
+.stat {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#achievement-count {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.progress-bar {
+  background: #333;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#progress {
+  background: linear-gradient(90deg, #ffcc00, #ffa500);
+  height: 100%;
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+#achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.achievement {
+  background-color: #333;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement.unlocked {
+  opacity: 1;
+  background-color: #444;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.2);
+}
+
+.achievement.unlocked::before {
+  content: '✓';
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #ffcc00;
+}
+
+.achievement h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ffcc00;
+}
+
+.achievement p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+#achievement-popup {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 204, 0, 0.95);
+  color: #000;
+  padding: 15px 25px;
+  border-radius: 10px;
+  transition: bottom 0.5s ease;
+  z-index: 1000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#achievement-popup.show {
+  bottom: 20px;
+}
+
+.popup-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.trophy-icon {
+  font-size: 2rem;
+}
+
+.popup-text {
+  text-align: left;
+}
+
+.popup-text h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.popup-text p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  #achievements {
+    grid-template-columns: 1fr;
+  }
+  
+  body {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}
+

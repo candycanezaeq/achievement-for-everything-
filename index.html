@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achievement for Everything</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Achievement for Everything</h1>
+  <div id="stats">
+    <div class="stat">
+      <span id="achievement-count">0</span>
+      <span>/ <span id="total-achievements">0</span> Achievements</span>
+    </div>
+    <div class="progress-bar">
+      <div id="progress"></div>
+    </div>
+  </div>
+  <div id="achievements"></div>
+  <div id="achievement-popup" class="hidden">
+    <div class="popup-content">
+      <div class="trophy-icon">🏆</div>
+      <div class="popup-text">
+        <h3>Achievement Unlocked!</h3>
+        <p id="popup-description"></p>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="achievements.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
